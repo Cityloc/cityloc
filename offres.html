@@ -153,16 +153,19 @@ title: Cityloc - Offres
             <button class="reserve-button" id="lightbox-reserve">Réserver →</button>
             <div id="reservation-form" class="hidden">
                 <h3>Réserver cette offre</h3>
-                <form action="https://formspree.io/f/mpzgejkn" method="post">
+                <form id="reservation-form-fields" action="URL_DE_VOTRE_FORMULAIRE" method="post">
+                    <input type="hidden" id="offre-title" name="offre-title">
+                    <input type="hidden" id="offre-description" name="offre-description">
+            
                     <label for="nomReserve">Nom :</label>
                     <input type="text" id="nomReserve" name="nomReserve" maxlength="400" required>
-    
+            
                     <label for="emailReserve">Email :</label>
                     <input type="email" id="emailReserve" name="emailReserve" required>
-    
+            
                     <label for="dateHeureReserve">Date et heure de réservation :</label>
                     <input type="datetime-local" id="dateHeureReserve" name="dateHeureReserve" required>
-    
+            
                     <input type="submit" value="Réserver">
                 </form>
             </div>
