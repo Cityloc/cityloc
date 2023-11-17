@@ -1140,3 +1140,14 @@ footer{
     input[type="submit"]:hover {
         background-color: #34637d;
     }
+.contentForm{
+	display: flex;
+	flex-direction: column;
+}
+@media screen and (min-width: 1000px){
+	.contentForm{
+		align-items: center;
+		margin: 20px 0;
+		flex-direction: row;
+	}
+}
