@@ -14,7 +14,7 @@ title: Cityloc - Offres
         <div class="search-bar">
             <input type="text" id="search-input" placeholder="Rechercher...">
         </div>
-        <button class="add-offer">+ Ajouter une offre</button>
+        <button class="add-offer" id="add-offer-button">+ Ajouter une offre</button>
     </div>
 
 
@@ -130,6 +130,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightboxReserve = document.getElementById("lightbox-reserve");
     const lightboxCloseButton = document.querySelector(".close-button");
     const reservationForm = document.getElementById("reservation-form");
+    const addOfferButton = document.getElementById("add-offer-button");
+    const lightboxAddOffer = document.createElement("div");
+
+    lightboxAddOffer.classList.add("lightbox", "hidden");
+    lightboxAddOffer.innerHTML = `
+        <div class="lightbox-content">
+            <span class="close-button" id="close-add-offer">&times;</span>
+            <h3>Ajouter une offre</h3>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <label for="nomOffre">Nom de l'offre:</label>
+                <input type="text" id="nomOffre" name="nomOffre" maxlength="400" required>
+
+                <label for="descriptionOffre">Description de l'offre:</label>
+                <textarea id="descriptionOffre" name="descriptionOffre" maxlength="2000" required></textarea>
+
+                <label for="illustration">Illustration (image):</label>
+                <input type="file" id="illustration" name="illustration" accept="image/*" required>
+
+                <input type="submit" value="Ajouter">
+            </form>
+        </div>
+    `;
+    document.body.appendChild(lightboxAddOffer);
+
+    const closeAddOfferButton = document.getElementById("close-add-offer");
 
     searchInput.addEventListener("input", function () {
         const searchTerm = searchInput.value.trim().toLowerCase();
@@ -171,6 +196,20 @@ document.addEventListener("DOMContentLoaded", function () {
         reservationForm.style.display = "block";
     });
 
+    addOfferButton.addEventListener("click", function () {
+        lightboxAddOffer.style.display = "flex";
+    });
+
+    closeAddOfferButton.addEventListener("click", function () {
+        lightboxAddOffer.style.display = "none";
+    });
+
+    lightboxAddOffer.addEventListener("click", function (event) {
+        if (event.target === lightboxAddOffer) {
+            lightboxAddOffer.style.display = "none";
+        }
+    });
+
     lightboxCloseButton.addEventListener("click", function () {
         closeLightbox();
     });
@@ -190,8 +229,5 @@ document.addEventListener("DOMContentLoaded", function () {
         lightbox.style.display = "none";
     }
 });
-
-
-
 
 </script>
