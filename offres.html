@@ -37,7 +37,7 @@ title: Cityloc - Offres
         }
 
         input[type="submit"] {
-            background-color: #4caf50;
+            background-color: #224050;
             color: #fff;
             padding: 10px 15px;
             border: none;
@@ -47,7 +47,7 @@ title: Cityloc - Offres
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #34637d;
         }
 
 </style>
@@ -153,18 +153,24 @@ title: Cityloc - Offres
             <button class="reserve-button" id="lightbox-reserve">Réserver →</button>
             <div id="reservation-form" class="hidden">
                 <h3>Réserver cette offre</h3>
-                <form id="reservation-form-fields" action="URL_DE_VOTRE_FORMULAIRE" method="post">
+                <form id="reservation-form-fields" action="https://formspree.io/f/mpzgejkn" method="post">
                     <input type="hidden" id="offre-title" name="offre-title">
                     <input type="hidden" id="offre-description" name="offre-description">
-            
-                    <label for="nomReserve">Nom :</label>
-                    <input type="text" id="nomReserve" name="nomReserve" maxlength="400" required>
-            
-                    <label for="emailReserve">Email :</label>
-                    <input type="email" id="emailReserve" name="emailReserve" required>
-            
-                    <label for="dateHeureReserve">Date et heure de réservation :</label>
-                    <input type="datetime-local" id="dateHeureReserve" name="dateHeureReserve" required>
+
+                    <div style="display: flex;">
+                        <label for="nomReserve">Nom :</label>
+                        <input type="text" id="nomReserve" name="nomReserve" maxlength="400" required>
+                    </div>
+
+                    <div style="display: flex;">
+                        <label for="emailReserve">Email :</label>
+                        <input type="email" id="emailReserve" name="emailReserve" required>
+                    </div>
+
+                    <div style="display: flex;">
+                        <label for="dateHeureReserve">Date et heure de réservation :</label>
+                        <input type="datetime-local" id="dateHeureReserve" name="dateHeureReserve" required>
+                    </div>
             
                     <input type="submit" value="Réserver">
                 </form>
@@ -242,11 +248,13 @@ document.addEventListener("DOMContentLoaded", function () {
             lightboxDescription.textContent = description;
 
             lightbox.style.display = "flex";
+            lightboxReserve.classList.remove("hidden");
         });
     });
 
     lightboxReserve.addEventListener("click", function () {
         // Cachez l'image, le titre et la description
+        lightboxReserve.classList.add("hidden");
         reservationForm.classList.remove("hidden");
     });
 
