@@ -1086,3 +1086,54 @@ footer{
             width: 25%;
         }
     }
+
+/** -------------------------------------------------- OFFER -------------------------------------------------- **/
+
+    .hidden {
+        display: none;
+    }
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-width: 600px;
+        max-width: 1000px;
+        width: 100%;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    input[type="text"],
+    textarea {
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid #454545;
+        border-radius: 4px;
+    }
+    input[type="email"] {
+        border: 1px solid #454545;
+        padding: 8px;
+        border-radius: 4px;
+    }
+    input[type="datetime-local"] {
+        border: 1px solid #454545;
+        padding: 8px;
+        border-radius: 4px;
+    }
+    input[type="file"] {
+        margin-top: 8px;
+    }
+    input[type="submit"] {
+        background-color: #224050;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #34637d;
+    }
