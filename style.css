@@ -533,6 +533,7 @@ footer{
 #fs-frm{
   background-color: #224050;
   box-shadow: none;
+  margin: auto;
 }
 #fs-frm input,
 #fs-frm select,
