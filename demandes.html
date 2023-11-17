@@ -3,92 +3,93 @@ layout: header_base
 title: Cityloc - Demandes
 ---
 
+
     <div class="headerRecherches">
         <div class="search-bar">
             <input type="text" id="search-input" placeholder="Rechercher...">
         </div>
-        <button class="add-offer">+ Ajouter une demande</button>
+        <button class="add-offer" id="add-offer-button">+ Ajouter une demande</button>
     </div>
 
 
     <div class="thumbnails">
         <div class="thumbnail">
-            <img src="https://cityloc.github.io/cityloc/imgs/produit1.jpg" alt="Offre 1">
+            <img src="https://cityloc.github.io/cityloc/imgs/default_demande.png" alt="Offre 1">
             <div class="overlay">
                 <h3>Tondeuse</h3>
-                <p>Description de la demande 1...</p>
+                <p>Description de l'offre 1...</p>
                 <div class="btnAdd">Proposer</div>
             </div>
         </div>
         <div class="thumbnail">
-            <img src="https://cityloc.github.io/cityloc/imgs/produit2.jpg" alt="Offre 1">
+            <img src="https://cityloc.github.io/cityloc/imgs/default_demande.png" alt="Offre 1">
             <div class="overlay">
                 <h3>Rasoir</h3>
-                <p>Description de la demande 2...</p>
+                <p>Description de l'offre 2...</p>
                 <div class="btnAdd">Proposer</div>
             </div>
         </div>
         <div class="thumbnail">
-            <img src="https://cityloc.github.io/cityloc/imgs/produit3.jpg" alt="Offre 1">
+            <img src="https://cityloc.github.io/cityloc/imgs/default_demande.png" alt="Offre 1">
             <div class="overlay">
                 <h3>Ponceuse à bande</h3>
-                <p>Description de la demande 3...</p>
+                <p>Description de l'offre 3...</p>
                 <div class="btnAdd">Proposer</div>
             </div>
         </div>
         <div class="thumbnail">
-            <img src="https://cityloc.github.io/cityloc/imgs/produit4.jpg" alt="Offre 1">
+            <img src="https://cityloc.github.io/cityloc/imgs/default_demande.png" alt="Offre 1">
             <div class="overlay">
                 <h3>VTT</h3>
-                <p>Description de la demande 4...</p>
+                <p>Description de l'offre 4...</p>
                 <div class="btnAdd">Proposer</div>
             </div>
         </div>
         <div class="thumbnail">
-            <img src="https://cityloc.github.io/cityloc/imgs/produit5.jpg" alt="Offre 1">
+            <img src="https://cityloc.github.io/cityloc/imgs/default_demande.png" alt="Offre 1">
             <div class="overlay">
                 <h3>Karcher</h3>
-                <p>Description de la demande 5...</p>
+                <p>Description de l'offre 5...</p>
                 <div class="btnAdd">Proposer</div>
             </div>
         </div>
         <div class="thumbnail">
-            <img src="https://cityloc.github.io/cityloc/imgs/produit6.jpg" alt="Offre 1">
+            <img src="https://cityloc.github.io/cityloc/imgs/default_demande.png" alt="Offre 1">
             <div class="overlay">
                 <h3>Perceuse à colonne</h3>
-                <p>Description de la demande 6...</p>
+                <p>Description de l'offre 6...</p>
                 <div class="btnAdd">Proposer</div>
             </div>
         </div>
         <div class="thumbnail">
-            <img src="https://cityloc.github.io/cityloc/imgs/produit7.jpg" alt="Offre 1">
+            <img src="https://cityloc.github.io/cityloc/imgs/default_demande.png" alt="Offre 1">
             <div class="overlay">
                 <h3>Perceuse</h3>
-                <p>Description de la demande 7...</p>
+                <p>Description de l'offre 7...</p>
                 <div class="btnAdd">Proposer</div>
             </div>
         </div>
         <div class="thumbnail">
-            <img src="https://cityloc.github.io/cityloc/imgs/produit8.jpg" alt="Offre 1">
+            <img src="https://cityloc.github.io/cityloc/imgs/default_demande.png" alt="Offre 1">
             <div class="overlay">
                 <h3>Thermomix</h3>
-                <p>Description de la demande 8...</p>
+                <p>Description de l'offre 8...</p>
                 <div class="btnAdd">Proposer</div>
             </div>
         </div>
         <div class="thumbnail">
-            <img src="https://cityloc.github.io/cityloc/imgs/produit9.jpg" alt="Offre 1">
+            <img src="https://cityloc.github.io/cityloc/imgs/default_demande.png" alt="Offre 1">
             <div class="overlay">
                 <h3>Appareil à raclette 2 personnes</h3>
-                <p>Description de la demande 9...</p>
+                <p>Description de l'offre 9...</p>
                 <div class="btnAdd">Proposer</div>
             </div>
         </div>
         <div class="thumbnail">
-            <img src="https://cityloc.github.io/cityloc/imgs/produit10.jpg" alt="Offre 1">
+            <img src="https://cityloc.github.io/cityloc/imgs/default_demande.png" alt="Offre 1">
             <div class="overlay">
                 <h3>Remorque 2m de long</h3>
-                <p>Description de la demande 10...</p>
+                <p>Description de l'offre 10...</p>
                 <div class="btnAdd">Proposer</div>
             </div>
         </div>
@@ -97,14 +98,36 @@ title: Cityloc - Demandes
 
     <div class="lightbox">
         <div class="lightbox-content">
-            <span class="close-button">&times;</span>
+            <span class="close-button" id="close-lightbox">&times;</span>
             <img src="" id="lightbox-image" alt="Offre">
             <h3 id="lightbox-title">Titre de la demande</h3>
             <p id="lightbox-description">Description de la demande...</p>
-            <button class="reserve-button" id="lightbox-reserve">Proposer →</button>
+            <div id="reservation-form">
+                <h3>Répondre à la demande</h3>
+                <form id="reservation-form-fields" action="https://formspree.io/f/mpzgejkn" method="post">
+                    <input type="hidden" id="offre-title" name="offre-title">
+                    <input type="hidden" id="offre-description" name="offre-description">
+
+                     <div class="contentForm">
+                        <label for="nomReserve" style="margin:0 20px 0 0;">Nom :</label>
+                        <input type="text" id="nomReserve" name="nomReserve" maxlength="400" required>
+                    </div>
+
+                    <div class="contentForm">
+                        <label for="emailReserve" style="margin:0 20px 0 0;">Email :</label>
+                        <input type="email" id="emailReserve" name="emailReserve" required>
+                    </div>
+
+                    <div class="contentForm">
+                        <label for="dateHeureReserve" style="margin:0 20px 0 0;">Date et heure de réservation :</label>
+                        <input type="datetime-local" id="dateHeureReserve" name="dateHeureReserve" required>
+                    </div>
+            
+                    <input type="submit" value="Proposer →">
+                </form>
+            </div>
         </div>
     </div>
-
 </body>
 </html>
 
@@ -119,8 +142,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightboxImage = document.getElementById("lightbox-image");
     const lightboxTitle = document.getElementById("lightbox-title");
     const lightboxDescription = document.getElementById("lightbox-description");
-    const lightboxReserve = document.getElementById("lightbox-reserve");
     const lightboxCloseButton = document.querySelector(".close-button");
+    const reservationForm = document.getElementById("reservation-form");
+    const addOfferButton = document.getElementById("add-offer-button");
+    const lightboxAddOffer = document.createElement("div");
+
+    lightboxAddOffer.classList.add("lightbox", "hidden");
+    lightboxAddOffer.innerHTML = `
+        <div class="lightbox-content">
+            <span class="close-button" id="close-add-offer">&times;</span>
+            <h3>Ajouter une offre</h3>
+            <form action="https://formspree.io/f/mpzgejkn" method="post">
+                <label for="nomOffre">Nom de la demande :</label>
+                <input type="text" id="nomOffre" name="nomOffre" maxlength="400" style="margin-bottom: 30px;" required>
+        
+                <label for="descriptionOffre">Description de la demande :</label>
+                <textarea id="descriptionOffre" name="descriptionOffre" maxlength="2000" style="width: 600px;height: 200px; margin-bottom: 30px; max-width: -webkit-fill-available;" required></textarea>
+        
+                <label for="email">Votre email :</label>
+                <input type="email" id="email" name="email" style="margin-bottom: 30px;" required>
+        
+                <input type="submit" value="Ajouter" style="display: block; margin: auto;">
+            </form>
+        </div>
+    `;
+    document.body.appendChild(lightboxAddOffer);
+
+    const closeAddOfferButton = document.getElementById("close-add-offer");
 
     searchInput.addEventListener("input", function () {
         const searchTerm = searchInput.value.trim().toLowerCase();
@@ -151,6 +199,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    addOfferButton.addEventListener("click", function () {
+        lightboxAddOffer.style.display = "flex";
+    });
+
+    closeAddOfferButton.addEventListener("click", function () {
+        lightboxAddOffer.style.display = "none";
+    });
+
+    lightboxAddOffer.addEventListener("click", function (event) {
+        if (event.target === lightboxAddOffer) {
+            lightboxAddOffer.style.display = "none";
+        }
+    });
+
     lightboxCloseButton.addEventListener("click", function () {
         closeLightbox();
     });
@@ -162,8 +224,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function closeLightbox() {
+        lightboxImage.style.display = "block";
+        lightboxTitle.style.display = "block";
+        lightboxDescription.style.display = "block";
         lightbox.style.display = "none";
     }
 });
 
+
+
 </script>
+
