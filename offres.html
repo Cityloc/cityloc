@@ -152,8 +152,7 @@ title: Cityloc - Offres
             <img src="" id="lightbox-image" alt="Offre">
             <h3 id="lightbox-title">Titre de l'offre</h3>
             <p id="lightbox-description">Description de l'offre...</p>
-            <button class="reserve-button" id="lightbox-reserve">Réserver →</button>
-            <div id="reservation-form" class="hidden">
+            <div id="reservation-form">
                 <h3>Réserver cette offre</h3>
                 <form id="reservation-form-fields" action="https://formspree.io/f/mpzgejkn" method="post">
                     <input type="hidden" id="offre-title" name="offre-title">
@@ -192,7 +191,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("search-input");
     const thumbnails = document.querySelectorAll(".thumbnail");
     const lightbox = document.querySelector(".lightbox");
-    const lightboxReserve = document.getElementById("lightbox-reserve");
     const lightboxImage = document.getElementById("lightbox-image");
     const lightboxTitle = document.getElementById("lightbox-title");
     const lightboxDescription = document.getElementById("lightbox-description");
@@ -250,14 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
             lightboxDescription.textContent = description;
 
             lightbox.style.display = "flex";
-            lightboxReserve.classList.remove("hidden");
         });
-    });
-
-    lightboxReserve.addEventListener("click", function () {
-        // Cachez l'image, le titre et la description
-        lightboxReserve.classList.add("hidden");
-        reservationForm.classList.remove("hidden");
     });
 
     addOfferButton.addEventListener("click", function () {
@@ -288,7 +279,6 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxImage.style.display = "block";
         lightboxTitle.style.display = "block";
         lightboxDescription.style.display = "block";
-        lightboxReserve.style.display = "block";
         reservationForm.classList.add("hidden");
         lightbox.style.display = "none";
     }
