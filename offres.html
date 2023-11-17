@@ -13,7 +13,8 @@ title: Cityloc - Offres
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+            min-width: 600px;
+            max-width: 1000px;
             width: 100%;
         }
 
@@ -219,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <input type="text" id="nomOffre" name="nomOffre" maxlength="400" required>
         
                 <label for="descriptionOffre">Description de l'offre:</label>
-                <textarea id="descriptionOffre" name="descriptionOffre" maxlength="2000" required></textarea>
+                <textarea id="descriptionOffre" name="descriptionOffre" maxlength="2000" style="width: 600px;height: 200px;" required></textarea>
         
                 <label for="email">Votre email:</label>
                 <input type="email" id="email" name="email" required>
