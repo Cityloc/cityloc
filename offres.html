@@ -146,14 +146,29 @@ title: Cityloc - Offres
 
     <div class="lightbox">
         <div class="lightbox-content">
-            <span class="close-button">&times;</span>
+            <span class="close-button" id="close-lightbox">&times;</span>
             <img src="" id="lightbox-image" alt="Offre">
             <h3 id="lightbox-title">Titre de l'offre</h3>
             <p id="lightbox-description">Description de l'offre...</p>
             <button class="reserve-button" id="lightbox-reserve">Réserver →</button>
-            <iframe id="reservation-form" class="hidden" src="https://docs.google.com/forms/d/e/1FAIpQLSdGin9TLSLEzXR8bYWkljepqVmes3_Yw2tYsfWK188ejN5Igg/viewform?embedded=true" width="640" height="382" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+            <div id="reservation-form" class="hidden">
+                <h3>Réserver cette offre</h3>
+                <form action="https://formspree.io/f/mpzgejkn" method="post">
+                    <label for="nomReserve">Nom :</label>
+                    <input type="text" id="nomReserve" name="nomReserve" maxlength="400" required>
+    
+                    <label for="emailReserve">Email :</label>
+                    <input type="email" id="emailReserve" name="emailReserve" required>
+    
+                    <label for="dateHeureReserve">Date de réservation :</label>
+                    <input type="datetime-local" id="dateHeureReserve" name="dateHeureReserve" required>
+    
+                    <input type="submit" value="Réserver">
+                </form>
+            </div>
         </div>
     </div>
+
 
 </body>
 </html>
@@ -166,10 +181,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("search-input");
     const thumbnails = document.querySelectorAll(".thumbnail");
     const lightbox = document.querySelector(".lightbox");
+    const lightboxReserve = document.getElementById("lightbox-reserve");
+    const reservationForm = document.getElementById("reservation-form");
     const lightboxImage = document.getElementById("lightbox-image");
     const lightboxTitle = document.getElementById("lightbox-title");
     const lightboxDescription = document.getElementById("lightbox-description");
-    const lightboxReserve = document.getElementById("lightbox-reserve");
     const lightboxCloseButton = document.querySelector(".close-button");
     const reservationForm = document.getElementById("reservation-form");
     const addOfferButton = document.getElementById("add-offer-button");
@@ -229,13 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     lightboxReserve.addEventListener("click", function () {
         // Cachez l'image, le titre et la description
-        lightboxImage.style.display = "none";
-        lightboxTitle.style.display = "none";
-        lightboxDescription.style.display = "none";
-        lightboxReserve.style.display = "none";
-
-        // Affichez le formulaire de réservation
-        reservationForm.style.display = "block";
+        reservationForm.classList.remove("hidden");
     });
 
     addOfferButton.addEventListener("click", function () {
