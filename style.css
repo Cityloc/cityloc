@@ -1143,11 +1143,11 @@ footer{
 .contentForm{
 	display: flex;
 	flex-direction: column;
+	margin: 20px 0;
 }
 @media screen and (min-width: 1000px){
 	.contentForm{
 		align-items: center;
-		margin: 20px 0;
 		flex-direction: row;
 	}
 }
