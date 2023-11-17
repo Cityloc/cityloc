@@ -1041,6 +1041,7 @@ footer{
         height: auto;
         display: block;
         border-radius: 15px;
+	margin: auto;
     }
     .reserve-button {
         background-color: #224050;
