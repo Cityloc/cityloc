@@ -174,13 +174,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const reservationForm = document.getElementById("reservation-form");
     const addOfferButton = document.getElementById("add-offer-button");
     const lightboxAddOffer = document.createElement("div");
+    const addOfferForm = document.getElementById("add-offer-form");
+    const closeAddOfferButton = document.getElementById("close-add-offer");
 
     lightboxAddOffer.classList.add("lightbox", "hidden");
     lightboxAddOffer.innerHTML = `
         <div class="lightbox-content">
             <span class="close-button" id="close-add-offer">&times;</span>
             <h3 style="margin-bottom: 20px;">Ajouter une offre</h3>
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form id="add-offer-form" action="https://formspree.io/f/mpzgejkn" method="POST" enctype="multipart/form-data">
                 <label for="nomOffre">Nom de l'offre :</label>
                 <input type="text" id="nomOffre" name="nomOffre" maxlength="400" required>
 
@@ -190,13 +192,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 <label for="illustration">Illustration (image) :</label>
                 <input type="file" id="illustration" name="illustration" accept="image/*" required>
 
-                <input type="submit" value="Ajouter">
+                <button type="submit">Ajouter</button>
             </form>
         </div>
     `;
     document.body.appendChild(lightboxAddOffer);
 
-    const closeAddOfferButton = document.getElementById("close-add-offer");
+    closeAddOfferButton.addEventListener("click", function () {
+        lightboxAddOffer.style.display = "none";
+    });
 
     searchInput.addEventListener("input", function () {
         const searchTerm = searchInput.value.trim().toLowerCase();
@@ -242,14 +246,18 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxAddOffer.style.display = "flex";
     });
 
-    closeAddOfferButton.addEventListener("click", function () {
-        lightboxAddOffer.style.display = "none";
-    });
+    lightboxAddOffer.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    lightboxAddOffer.addEventListener("click", function (event) {
-        if (event.target === lightboxAddOffer) {
-            lightboxAddOffer.style.display = "none";
-        }
+        // Simulez l'envoi du formulaire
+        console.log("Formulaire soumis !");
+        console.log("Nom de l'offre:", addOfferForm.elements["nomOffre"].value);
+        console.log("Description de l'offre:", addOfferForm.elements["descriptionOffre"].value);
+        console.log("Illustration:", addOfferForm.elements["illustration"].files[0]);
+
+        // Réinitialisez le formulaire après soumission
+        addOfferForm.reset();
+        lightboxAddOffer.style.display = "none";
     });
 
     lightboxCloseButton.addEventListener("click", function () {
@@ -271,5 +279,6 @@ document.addEventListener("DOMContentLoaded", function () {
         lightbox.style.display = "none";
     }
 });
+
 
 </script>
