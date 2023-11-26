@@ -712,6 +712,11 @@ footer{
   .imgAccueilTeam img{
     width: 100%;
   }
+.mainText{
+	text-align: center;
+	font-size: 21px;
+	color: #224050;
+}
 
   @media screen and (min-width: 1080px){
     .containerBoxAccueil{
@@ -719,6 +724,9 @@ footer{
     }
     .imgAccueilTeam img{
       width: 80%;
+    }
+    .mainText{
+	font-size: 30px;
     }
   }
 
